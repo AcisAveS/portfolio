@@ -1,0 +1,25 @@
+---
+interface Props {
+  titulo?: string;
+  clases?: Array<string>;
+}
+const { titulo, clases } = Astro.props;
+const clase = clases?.join(" ");
+---
+
+<section class={clases! ? clase : "estilo"}>
+  {titulo! ? <h1>{titulo}</h1> : null}
+  <slot />
+</section>
+
+<style>
+  .estilo {
+    height: 100vh;
+    width: 100%;
+  }
+  h1 {
+    height: 40px;
+    color: rgb(156, 227, 255);
+    font-weight: bold;
+  }
+</style>

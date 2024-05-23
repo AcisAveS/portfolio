@@ -1,0 +1,42 @@
+---
+interface Props {
+  titulo: string;
+  descripcion: string;
+}
+const { titulo, descripcion } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={descripcion} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{titulo}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+  }
+
+  body {
+    background: radial-gradient(
+      circle at bottom center,
+      rgb(27, 41, 175) 0%,
+      rgb(6, 2, 134) 20%,
+      rgb(9, 7, 87) 50%,
+      rgb(2, 1, 26) 100%
+    );
+  }
+  * {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+  }
+</style>
