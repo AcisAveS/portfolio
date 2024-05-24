@@ -1,20 +1,21 @@
 ---
 interface Props {
   enlace: string;
-  texto: string;
+  texto?: string;
   icono?: string;
 }
 const { enlace, texto } = Astro.props;
 ---
 
-<a href={enlace}>
-  {texto}
+<a href={enlace} target="_blank">
+  <slot />
+  {texto! ? texto : null}
 </a>
 
 <style>
   a {
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     padding: 10px 30px;
