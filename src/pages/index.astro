@@ -2,6 +2,10 @@
 import Plantilla from "@/layouts/Plantilla.astro";
 import Section from "@/components/Section.astro";
 import Pildoras from "@/components/Pildoras.astro";
+import Proyecto from "@/components/Proyecto.astro";
+import portfolio from "@/content/portfolio.json";
+
+const { proyectos, contacto } = portfolio;
 ---
 
 <Plantilla
@@ -19,12 +23,12 @@ import Pildoras from "@/components/Pildoras.astro";
         </h1>
         <div class="contenedor-pildoras">
           <Pildoras
-            enlace="www.linkedin.com/in/acisavendanosanchez"
+            enlace={contacto.linkedin}
             texto="LinkedIn"
           >
             <i class="fa-brands fa-linkedin"></i>
           </Pildoras>
-          <Pildoras enlace="https://github.com/AcisAveS" texto="GitHub">
+          <Pildoras enlace={contacto.github} texto="GitHub">
             <i class="fa-brands fa-github"></i>
           </Pildoras>
           <Pildoras enlace="" texto="Descargar CV">
@@ -40,6 +44,20 @@ import Pildoras from "@/components/Pildoras.astro";
           alt="Foto de Acis"
         />
       </aside>
+    </Section>
+    <Section id="sobremi" titulo="Proyectos" clases={["proyectos"]}>
+      <div>
+        {
+          proyectos.map((proyecto) => {
+            return (
+              <Proyecto
+                imagen={proyecto.imagen}
+                descripcion={proyecto.descripcion}
+              />
+            );
+          })
+        }
+      </div>
     </Section>
     <Section id="sobremi" titulo="Sobre mí" />
   </main>
@@ -71,7 +89,6 @@ import Pildoras from "@/components/Pildoras.astro";
   }
 
   .inicio h1 {
-    color: rgb(255, 255, 255);
     font-size: 40px;
   }
 
@@ -93,5 +110,18 @@ import Pildoras from "@/components/Pildoras.astro";
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .proyectos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .proyectos div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 </style>
