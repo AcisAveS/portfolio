@@ -31,12 +31,16 @@ const { opciones } = Astro.props;
     color: white;
     font-weight: bold;
   }
+  a:hover {
+  }
 </style>
 
 <script>
   let nav = document.querySelector("nav");
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    nav!.style.backgroundColor = "rgba(0,0,0," + (y > 0 ? y / 500 : y) + " )";
+    let alpha = y > 0 ? y / 1000 : y;
+
+    nav!.style.backgroundColor = "rgba(22,24,43," + alpha + ")";
   });
 </script>
