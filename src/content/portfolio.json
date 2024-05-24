@@ -1,4 +1,10 @@
 {
+    "experiencias": [
+        {
+            "periodo": "",
+            "resumen": ""
+        }
+    ],
     "proyectos": [
         {
             "imagen": "./pathx.jpeg",
@@ -24,5 +30,10 @@
             "imagen": "./pathx.jpeg",
             "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia quisquam architecto ad recusandae minima? Laboriosam dicta sapiente ullam recusandae quibusdam et quis deserunt laudantium placeat, cumque vel tempore natus eum?"
         }
-    ]
+    ],
+    "contacto": {
+        "linkedin": "www.linkedin.com/in/acisavendanosanchez",
+        "github": "https://github.com/AcisAveS",
+        "correo": "acisavendano@outlook.com"
+    }
 }
