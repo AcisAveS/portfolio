@@ -1,12 +1,88 @@
 ---
 import Plantilla from "@/layouts/Plantilla.astro";
 import Section from "@/components/Section.astro";
+import Pildoras from "@/components/Pildoras.astro";
 ---
 
 <Plantilla
   titulo={"Portfolio - Acis"}
   descripcion={"Portfolio de Acis Avendaño Sánchez"}
 >
-  <Section titulo="Titulo" />
-  <Section titulo="Titulos" />
+  <main>
+    <Section id="inicio" clases={["inicio"]}>
+      <aside class="inicio-izquierdo">
+        <h1>
+          <span class="texto-llamativo">¡Hola!</span> soy Acis Avendaño Sánchez,
+          soy desarrollador <span class="texto-llamativo"
+            >Full Stack Junior</span
+          >
+        </h1>
+        <div class="contenedor-pildoras">
+          <Pildoras enlace="" texto="LinkedIn" />
+          <Pildoras enlace="" texto="GitHub" />
+          <Pildoras enlace="" texto="Descargar CV" />
+        </div>
+      </aside>
+      <aside class="inicio-derecho">
+        <img
+          src="./foto.jpeg"
+          width="500px"
+          height="500px"
+          alt="Foto de Acis"
+        />
+      </aside>
+    </Section>
+    <Section id="sobremi" titulo="Sobre mí" />
+  </main>
 </Plantilla>
+
+<style is:global>
+  main {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1200px;
+  }
+
+  .inicio {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: calc(100vh - 100px);
+  }
+
+  .inicio-izquierdo {
+    width: 50%;
+  }
+  .inicio-derecho {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .inicio h1 {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+  }
+
+  .inicio img {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    object-position: 100% 60%;
+    border-radius: 100%;
+  }
+
+  .texto-llamativo {
+    color: rgb(22, 57, 255);
+  }
+
+  .contenedor-pildoras {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+</style>
