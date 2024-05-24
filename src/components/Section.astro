@@ -1,13 +1,14 @@
 ---
 interface Props {
+  id?: string;
   titulo?: string;
   clases?: Array<string>;
 }
-const { titulo, clases } = Astro.props;
+const { id, titulo, clases } = Astro.props;
 const clase = clases?.join(" ");
 ---
 
-<section class={clases! ? clase : "estilo"}>
+<section id={id} class={clases! ? clase : "estilo"}>
   {titulo! ? <h1>{titulo}</h1> : null}
   <slot />
 </section>
