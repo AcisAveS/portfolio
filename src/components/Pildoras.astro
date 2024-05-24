@@ -1,0 +1,41 @@
+---
+interface Props {
+  enlace: string;
+  texto: string;
+  icono?: string;
+}
+const { enlace, texto } = Astro.props;
+---
+
+<a href={enlace}>
+  {texto}
+</a>
+
+<style>
+  a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: rgb(16, 0, 161);
+    border-radius: 15rem;
+  }
+  a:hover {
+    background: linear-gradient(90deg, rgb(15, 0, 151), rgb(0, 160, 223));
+    background-size: 300% 300%;
+    animation: gradient 3s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
