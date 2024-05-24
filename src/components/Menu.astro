@@ -1,0 +1,42 @@
+---
+interface Props {
+  opciones?: Array<string>;
+}
+const { opciones } = Astro.props;
+---
+
+<nav>
+  {
+    opciones?.map((opc) => {
+      let ref = opc.toLocaleLowerCase();
+      ref = ref.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      ref = "#" + ref.replace(" ", "");
+      return <a href={ref}>{opc}</a>;
+    })
+  }
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+  }
+  a {
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  let nav = document.querySelector("nav");
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    nav!.style.backgroundColor = "rgba(0,0,0," + (y > 0 ? y / 500 : y) + " )";
+  });
+</script>
