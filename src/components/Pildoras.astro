@@ -3,14 +3,24 @@ interface Props {
   enlace: string;
   texto?: string;
   icono?: string;
+  descarga?: boolean;
 }
-const { enlace, texto } = Astro.props;
+const { enlace, texto, descarga } = Astro.props;
 ---
 
-<a href={enlace} target="_blank">
-  <slot />
-  {texto! ? texto : null}
-</a>
+{
+  descarga ? (
+    <a href={enlace} target="_blank">
+      <slot />
+      {texto! ? texto : null}
+    </a>
+  ) : (
+    <a href={enlace} download>
+      <slot />
+      {texto! ? texto : null}
+    </a>
+  )
+}
 
 <style>
   a {
