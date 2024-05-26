@@ -2,8 +2,19 @@
 interface Props {
   imagen: string;
   descripcion: string;
+  git_texto_alterno?: string;
+  enlacegit?: string;
+  demo_texto_alterno?: string;
+  enlacedemo?: string;
 }
-const { imagen, descripcion } = Astro.props;
+const {
+  imagen,
+  descripcion,
+  git_texto_alterno,
+  enlacegit,
+  demo_texto_alterno,
+  enlacedemo,
+} = Astro.props;
 ---
 
 <article>
@@ -16,6 +27,22 @@ const { imagen, descripcion } = Astro.props;
     />
   </div>
   <p>{descripcion}</p>
+  {
+    enlacedemo! || enlacegit! ? (
+      <div class="enlaces">
+        {enlacegit! ? (
+          <a href={enlacegit}>
+            {!git_texto_alterno ? "Ver GitHub" : git_texto_alterno}
+          </a>
+        ) : null}
+        {enlacedemo! ? (
+          <a href={enlacedemo} target="_blank">
+            {!demo_texto_alterno ? "Ver Demo" : demo_texto_alterno}
+          </a>
+        ) : null}
+      </div>
+    ) : null
+  }
 </article>
 
 <style>
@@ -27,10 +54,20 @@ const { imagen, descripcion } = Astro.props;
     width: 300px;
     height: 350px;
     border-radius: 1rem;
-    background: linear-gradient(
-      45deg,
-      rgb(12, 0, 180) 0%,
-      rgb(0, 89, 255) 100%
-    );
+    background: linear-gradient(0deg, rgb(16, 0, 161), rgb(1, 35, 230));
+  }
+
+  .enlaces {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .enlaces a {
+    font-weight: bold;
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 25rem;
+    background: linear-gradient(20deg, rgb(0, 160, 223), rgb(15, 0, 151));
   }
 </style>
