@@ -4,8 +4,11 @@ import Section from "@/components/Section.astro";
 import Pildoras from "@/components/Pildoras.astro";
 import Proyecto from "@/components/Proyecto.astro";
 import portfolio from "@/content/portfolio.json";
+import "@/styles/inicio.css";
+import "@/styles/proyectos.css";
+import "@/styles/tecnologias.css";
 
-const { proyectos, contacto } = portfolio;
+const { proyectos, contacto, tecnologias } = portfolio;
 ---
 
 <Plantilla
@@ -74,18 +77,42 @@ const { proyectos, contacto } = portfolio;
       </p>
     </Section>
     <Section titulo="Tecnologías" clases={["tecnologias"]}>
-      <article class="tecnologia">
-        <h2>Lenguajes de Desarrollo</h2>
-        <div>Java, C#, JavaScript, TypeScript, C#</div>
-      </article>
-      <article class="tecnologia">
-        <h2>Herramientas</h2>
-        <div>Docker, Git</div>
-      </article>
-      <article class="tecnologia">
-        <h2>Frameworks</h2>
-        Astro, Nextjs, .Net
-      </article>
+      <div
+        style="display:flex; flex-direction:row;"
+        class="tecnologias-contenedor"
+      >
+        <article class="tecnologia">
+          <h2>Lenguajes de Desarrollo</h2>
+
+          <div>
+            {
+              tecnologias.lenguajes.map((lengua) => {
+                return <span>{lengua.nombre}</span>;
+              })
+            }
+          </div>
+        </article>
+        <article class="tecnologia">
+          <h2>Herramientas</h2>
+          <div>
+            {
+              tecnologias.herramientas.map((lengua) => {
+                return <span>{lengua.nombre}</span>;
+              })
+            }
+          </div>
+        </article>
+        <article class="tecnologia">
+          <h2>Frameworks</h2>
+          <div>
+            {
+              tecnologias.frameworks.map((lengua) => {
+                return <span>{lengua.nombre}</span>;
+              })
+            }
+          </div>
+        </article>
+      </div>
     </Section>
     <Section id="contacto" titulo="Contacto" clases={["contacto"]}>
       <a href={contacto.linkedin} target="_self">
@@ -106,66 +133,12 @@ const { proyectos, contacto } = portfolio;
     max-width: 1200px;
   }
 
-  .inicio {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    height: calc(100vh - 80px);
-  }
-
-  .inicio-izquierdo {
-    width: 50%;
-  }
-  .inicio-derecho {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-  }
-
-  .inicio h1 {
-    font-size: 40px;
-  }
-
-  .inicio img {
-    height: 500px;
-    width: 500px;
-    object-fit: cover;
-    object-position: 100% 60%;
-    border-radius: 100%;
-  }
-
   .texto-llamativo {
     color: rgb(22, 57, 255);
   }
-
-  .contenedor-pildoras {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .proyectos {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .proyectos div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
   .sobremi {
     width: 100%;
     font-size: 20px;
-  }
-
-  .tecnologias {
-    width: 100%;
   }
 
   .contacto {
