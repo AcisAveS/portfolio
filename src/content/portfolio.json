@@ -31,6 +31,62 @@
             "demo": null
         }
     ],
+    "tecnologias": {
+        "lenguajes": [
+            {
+                "imagen": "",
+                "nombre": "Java"
+            },
+            {
+                "imagen": "",
+                "nombre": "C#"
+            },
+            {
+                "imagen": "",
+                "nombre": "JavaScript"
+            },
+            {
+                "imagen": "",
+                "nombre": "TypeScript"
+            },
+            {
+                "imagen": "",
+                "nombre": "HTML"
+            },
+            {
+                "imagen": "",
+                "nombre": "CSS"
+            },
+            {
+                "imagen": "",
+                "nombre": "PHP"
+            }
+        ],
+        "herramientas": [
+            {
+                "imagen": "",
+                "nombre": "Docker"
+            },
+            {
+                "imagen": "",
+                "nombre": "GitHub"
+            }
+        ],
+        "frameworks": [
+            {
+                "imagen": "",
+                "nombre": "Astro"
+            },
+            {
+                "imagen": "",
+                "nombre": "Next.js"
+            },
+            {
+                "imagen": "",
+                "nombre": ".net"
+            }
+        ]
+    },
     "contacto": {
         "linkedin": "https://www.linkedin.com/in/acisavendanosanchez",
         "github": "https://github.com/AcisAveS",
