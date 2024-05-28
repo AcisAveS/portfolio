@@ -16,22 +16,18 @@ const { proyectos, contacto } = portfolio;
     <Section id="inicio" clases={["inicio"]}>
       <aside class="inicio-izquierdo">
         <h1>
-          <span class="texto-llamativo">¡Hola!</span> soy Acis Avendaño Sánchez,
-          soy desarrollador <span class="texto-llamativo"
-            >Full Stack Junior</span
-          >
+          <span class="texto-llamativo">¡Hola!</span>
+          soy Acis Avendaño Sánchez, soy desarrollador
+          <span class="texto-llamativo"> Full Stack Junior </span>
         </h1>
         <div class="contenedor-pildoras">
-          <Pildoras
-            enlace={contacto.linkedin}
-            texto="LinkedIn"
-          >
+          <Pildoras enlace={contacto.linkedin} texto="LinkedIn">
             <i class="fa-brands fa-linkedin"></i>
           </Pildoras>
           <Pildoras enlace={contacto.github} texto="GitHub">
             <i class="fa-brands fa-github"></i>
           </Pildoras>
-          <Pildoras enlace="" texto="Descargar CV">
+          <Pildoras enlace="" texto="Descargar CV" descarga={true}>
             <i class="fa-solid fa-download"></i>
           </Pildoras>
         </div>
@@ -45,27 +41,65 @@ const { proyectos, contacto } = portfolio;
         />
       </aside>
     </Section>
-    <Section id="sobremi" titulo="Proyectos" clases={["proyectos"]}>
-      <div>
-        {
-          proyectos.map((proyecto) => {
-            return (
-              <Proyecto
-                imagen={proyecto.imagen}
-                descripcion={proyecto.descripcion}
-              />
-            );
-          })
-        }
-      </div>
+    {
+      proyectos.length > 0 ? (
+        <Section id="proyectos" titulo="Proyectos" clases={["proyectos"]}>
+          <div style={proyectos.length % 2 == 0 ? " flex:1 1 50%" : null}>
+            {proyectos!.map((proyecto: any) => {
+              return (
+                <Proyecto
+                  imagen={proyecto.imagen}
+                  descripcion={proyecto.descripcion}
+                  enlacegit={proyecto.git}
+                  enlacedemo={proyecto.demo}
+                />
+              );
+            })}
+          </div>
+        </Section>
+      ) : null
+    }
+    <Section id="sobremi" titulo="Sobre mí" clases={["sobremi"]}>
+      <p>
+        Soy un Licenciado en Sistemas Computacionales, me gusta aprender nuevas
+        tecnologías, viendo las nuevas posibilidades que puedo llegar a hacer
+        estás y me gusta escuchar música dubstep mientras me concentro en la
+        programación.
+      </p>
+      <p>
+        Capaz de adaptarse a las situaciones que se presenten, me gustan los
+        desafíos que se me presenten, llegando a ponerle mucha atención por la
+        emoción de ver de lo que puedo llegar a hacer para obtener una o varias
+        posibles soluciones.
+      </p>
     </Section>
-    <Section id="sobremi" titulo="Sobre mí" />
+    <Section titulo="Tecnologías" clases={["tecnologias"]}>
+      <article class="tecnologia">
+        <h2>Lenguajes de Desarrollo</h2>
+        <div>Java, C#, JavaScript, TypeScript, C#</div>
+      </article>
+      <article class="tecnologia">
+        <h2>Herramientas</h2>
+        <div>Docker, Git</div>
+      </article>
+      <article class="tecnologia">
+        <h2>Frameworks</h2>
+        Astro, Nextjs, .Net
+      </article>
+    </Section>
+    <Section id="contacto" titulo="Contacto" clases={["contacto"]}>
+      <a href={contacto.linkedin} target="_self">
+        <i class="fa-brands fa-linkedin"></i>LinkedIn
+      </a>
+      <a href={"mailto:" + contacto.correo}>
+        <i class="fa-solid fa-at"></i>acisavendano@outlook.com
+      </a>
+    </Section>
   </main>
 </Plantilla>
 
 <style is:global>
   main {
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -76,7 +110,7 @@ const { proyectos, contacto } = portfolio;
     align-items: center;
     display: flex;
     justify-content: space-around;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
   }
 
   .inicio-izquierdo {
@@ -123,5 +157,24 @@ const { proyectos, contacto } = portfolio;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+  }
+
+  .sobremi {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .tecnologias {
+    width: 100%;
+  }
+
+  .contacto {
+    height: 500px;
+    width: 100%;
+  }
+  .contacto a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
   }
 </style>
