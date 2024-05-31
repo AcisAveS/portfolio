@@ -10,3 +10,22 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.proyecto-imagen {
+  width: 100%;
+  height: 256px;
+}
+
+.proyecto-enlaces {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.proyecto-enlaces a {
+  font-weight: bold;
+  padding: 4px 10px;
+  text-decoration: none;
+  border-radius: 25rem;
+  background: linear-gradient(20deg, rgb(0, 160, 223), rgb(15, 0, 151));
+}
