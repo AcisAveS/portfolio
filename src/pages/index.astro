@@ -7,6 +7,7 @@ import portfolio from "@/content/portfolio.json";
 import "@/styles/inicio.css";
 import "@/styles/proyectos.css";
 import "@/styles/tecnologias.css";
+import Tecnologia from "@/components/Tecnologia.astro";
 
 const { proyectos, contacto, tecnologias } = portfolio;
 ---
@@ -47,11 +48,11 @@ const { proyectos, contacto, tecnologias } = portfolio;
     {
       proyectos.length > 0 ? (
         <Section id="proyectos" titulo="Proyectos" clases={["proyectos"]}>
-          <div style={proyectos.length % 2 == 0 ? " flex:1 1 50%" : null}>
+          <div>
             {proyectos!.map((proyecto: any) => {
               return (
                 <Proyecto
-                  imagen={proyecto.imagen}
+                  imagen={!proyecto.imagen ? "./missing.png" : proyecto.imagen}
                   descripcion={proyecto.descripcion}
                   enlacegit={proyecto.git}
                   enlacedemo={proyecto.demo}
@@ -77,41 +78,22 @@ const { proyectos, contacto, tecnologias } = portfolio;
       </p>
     </Section>
     <Section titulo="Tecnologías" clases={["tecnologias"]}>
-      <div
-        style="display:flex; flex-direction:row;"
-        class="tecnologias-contenedor"
-      >
-        <article class="tecnologia">
-          <h2>Lenguajes de Desarrollo</h2>
-
-          <div>
-            {
-              tecnologias.lenguajes.map((lengua) => {
-                return <span>{lengua.nombre}</span>;
-              })
-            }
-          </div>
-        </article>
-        <article class="tecnologia">
-          <h2>Herramientas</h2>
-          <div>
-            {
-              tecnologias.herramientas.map((lengua) => {
-                return <span>{lengua.nombre}</span>;
-              })
-            }
-          </div>
-        </article>
-        <article class="tecnologia">
-          <h2>Frameworks</h2>
-          <div>
-            {
-              tecnologias.frameworks.map((lengua) => {
-                return <span>{lengua.nombre}</span>;
-              })
-            }
-          </div>
-        </article>
+      <div class="tecnologias-contenedor">
+        <Tecnologia
+          titulo="Lenguajes de Desarrollo"
+          tecnologia={tecnologias.lenguajes}
+          clases={["tecnologia"]}
+        />
+        <Tecnologia
+          titulo="Herramientas"
+          tecnologia={tecnologias.herramientas}
+          clases={["tecnologia"]}
+        />
+        <Tecnologia
+          titulo="Frameworks"
+          tecnologia={tecnologias.frameworks}
+          clases={["tecnologia"]}
+        />
       </div>
     </Section>
     <Section id="contacto" titulo="Contacto" clases={["contacto"]}>

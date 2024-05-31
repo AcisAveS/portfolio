@@ -1,0 +1,39 @@
+---
+interface Tecnologias {
+  imagen: string | null;
+  nombre: string;
+  estilos: Array<string>;
+}
+
+interface Props {
+  titulo: string;
+  tecnologia: Array<Tecnologias>;
+  clases?: Array<string>;
+}
+const { titulo, tecnologia, clases } = Astro.props;
+---
+
+<article class={clases?.join(" ")}>
+  <h2 style="text-align: center;">{titulo}</h2>
+  <div
+    style="display: flex; flex-direction: row; flex-wrap: wrap; gap:50px;justify-content: center;"
+  >
+    {
+      tecnologia.map((tecno) => {
+        return (
+          <div
+            class="tecno-imagen"
+            style={tecno.estilos?.length == 0 ? null : tecno.estilos.join(";")}
+          >
+            <img
+              width="100%"
+              height="100%"
+              src={!tecno.imagen ? "missing.png" : tecno.imagen}
+              title={tecno.nombre}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+</article>
