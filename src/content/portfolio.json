@@ -9,20 +9,20 @@
         {
             "imagen": null,
             "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia quisquam architecto ad recusandae minima? Laboriosam dicta sapiente ullam recusandae quibusdam et quis deserunt laudantium placeat, cumque vel tempore natus eum?",
-            "git": "1",
-            "demo": "1"
+            "git": null,
+            "demo": null
         },
         {
             "imagen": null,
             "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia quisquam architecto ad recusandae minima? Laboriosam dicta sapiente ullam recusandae quibusdam et quis deserunt laudantium placeat, cumque vel tempore natus eum?",
-            "git": "1",
-            "demo": "1"
+            "git": null,
+            "demo": null
         },
         {
             "imagen": null,
             "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia quisquam architecto ad recusandae minima? Laboriosam dicta sapiente ullam recusandae quibusdam et quis deserunt laudantium placeat, cumque vel tempore natus eum?",
-            "git": "1",
-            "demo": "1"
+            "git": null,
+            "demo": null
         },
         {
             "imagen": null,
@@ -34,56 +34,73 @@
     "tecnologias": {
         "lenguajes": [
             {
-                "imagen": "",
-                "nombre": "Java"
+                "imagen": "/tecnologias/java.svg",
+                "nombre": "Java",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "C#"
+                "imagen": "/tecnologias/c_sharp.svg",
+                "nombre": "C#",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "JavaScript"
+                "imagen": "/tecnologias/javascript.svg",
+                "nombre": "JavaScript",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "TypeScript"
+                "imagen": "/tecnologias/typescript.svg",
+                "nombre": "TypeScript",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "HTML"
+                "imagen": "/tecnologias/html.svg",
+                "nombre": "HTML",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "CSS"
+                "imagen": "/tecnologias/css_3.svg",
+                "nombre": "CSS",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "PHP"
+                "imagen": "/tecnologias/php.svg",
+                "nombre": "PHP",
+                "estilos": [
+                    "width:140px"
+                ]
             }
         ],
         "herramientas": [
             {
-                "imagen": "",
-                "nombre": "Docker"
+                "imagen": "/tecnologias/docker.svg",
+                "nombre": "Docker",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "GitHub"
+                "imagen": "/tecnologias/github.svg",
+                "nombre": "GitHub",
+                "estilos": []
             }
         ],
         "frameworks": [
             {
-                "imagen": "",
-                "nombre": "Astro"
+                "imagen": "/tecnologias/astro_icon.svg",
+                "nombre": "Astro",
+                "estilos": []
             },
             {
-                "imagen": "",
-                "nombre": "Next.js"
+                "imagen": "/tecnologias/nextjs.svg",
+                "nombre": "Next.js",
+                "estilos": [
+                    "background-image: radial-gradient(circle at center, white 50%, black 70%)",
+                    "border-radius: 50%"
+                ]
             },
             {
-                "imagen": "",
-                "nombre": ".net"
+                "imagen": "/tecnologias/dot_net_core.svg",
+                "nombre": ".net",
+                "estilos": []
             }
         ]
     },
